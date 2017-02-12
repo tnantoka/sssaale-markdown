@@ -1,13 +1,14 @@
 import Vapor
 import Fluent
 import Foundation
+import KituraMarkdown
 
 final class Example: Model {
     var id: Node?
 
     var input: String
     var output: String {
-        return input.uppercased()
+        return KituraMarkdown.render(from: input)
     }
     
     init(input: String) {
