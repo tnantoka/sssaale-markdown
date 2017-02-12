@@ -19,10 +19,11 @@ class AppLogicTests: XCTestCase {
     
     func testExamples() {
         let drop = try! makeTestDroplet()
-        let json = try! JSON(node: .object([ "input" : "hello" ]))
+        let json = try! JSON(node: .object([ "input" : "# hello" ]))
         let req = try! Request(method: .post, uri: "/example", body: json.makeBody())
         let res = try! drop.respond(to: req)
         let body = res.body.bytes!.string
-        XCTAssertTrue(body.contains("HELLO"))
+        print(body)
+        XCTAssertTrue(body.contains("<h1>hello</h1>"))
     }
 }
