@@ -28,7 +28,6 @@ class AppLogicTests: XCTestCase {
         )
         let res = try! drop.respond(to: req)
         let body = res.body.bytes!.string
-        print(body)
         XCTAssertTrue(body.contains("<h1>hello</h1>"))
     }
 }
