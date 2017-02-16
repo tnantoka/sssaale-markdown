@@ -43,7 +43,7 @@ class App extends React.Component {
             <div>
                 <form className="my-4" onSubmit={ this.handleSubmit }>
                     <div className="form-group">
-                        <textarea type="text" className="form-control form-control-lg" value={ example.input } onChange={ this.handleChange } ref={ input => this.input = input } rows="5" />
+                        <textarea className="form-control form-control-lg" value={ example.input } onChange={ this.handleChange } ref={ input => this.input = input } rows="5" />
                     </div>
                     <div className="form-group">
                         <input type="submit" className="btn btn-secondary btn-block btn-lg" disabled={loading} />
